@@ -1,38 +1,105 @@
 .App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.counter-card {
+  width: 100%;
+  max-width: 22rem;
+  padding: 2rem 1.75rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.counter-card__title {
+  margin: 0 0 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8b95a8;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.counter-card__value {
+  margin: 0 0 1.75rem;
+  font-size: clamp(3.5rem, 12vw, 4.5rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-align: center;
+  color: #f0f3f8;
+  text-shadow: 0 2px 24px rgba(100, 180, 255, 0.15);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.counter-card__actions {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.625rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.counter-card__btn {
+  flex: 1 1 auto;
+  min-width: 5rem;
+  padding: 0.65rem 1rem;
+  border-radius: 0.65rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: transform 0.12s ease, box-shadow 0.12s ease,
+    background 0.12s ease, border-color 0.12s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.counter-card__btn:focus-visible {
+  outline: 2px solid #6eb3ff;
+  outline-offset: 2px;
+}
+
+.counter-card__btn:active {
+  transform: scale(0.97);
+}
+
+.counter-card__btn--primary {
+  color: #0c1118;
+  background: linear-gradient(180deg, #7ec8ff 0%, #4a9fe8 100%);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(74, 159, 232, 0.35);
+}
+
+.counter-card__btn--primary:hover {
+  background: linear-gradient(180deg, #94d2ff 0%, #5aaef0 100%);
+  box-shadow: 0 6px 20px rgba(74, 159, 232, 0.45);
+}
+
+.counter-card__btn--secondary {
+  color: #e8eaef;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.counter-card__btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.counter-card__btn--ghost {
+  flex-basis: 100%;
+  color: #9aa3b2;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.counter-card__btn--ghost:hover {
+  color: #c5cad4;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
 }
